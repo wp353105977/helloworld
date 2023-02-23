@@ -1,0 +1,149 @@
+-- 基本操作
+
+1.追踪文件file
+
+git add file
+
+2.追踪多个文件file1 file2
+
+git  add file1 file2
+
+3.提交更新
+
+git commit -m ""
+
+4.查看状态
+
+git  status
+
+5.查看日志
+
+git log 
+
+6.查看日志使用图形
+
+git log --graph
+
+7.查看所有日志
+
+git reflog
+
+8.删除file操作
+
+rm -rf file ; git  add file ; git commit -m
+
+-- 回退
+
+1. 回退上一个版本
+
+git reset --hard HEAD~1
+
+2. 回退到具体的提交commitid
+
+git reset  --hard commitid
+
+3. 清楚暂存区
+
+git restore --staged file
+
+4. 清楚工作区改动
+
+git  restore file
+
+5. 是工作区文件file从HEAD 恢复
+
+git checkout -- file
+
+远程操作
+
+1.查看远程权限
+
+git remote -v
+
+2.更新
+
+git pull
+
+3.复制clone
+
+git clone xxx
+
+分支操作
+
+1. 创建并切换分支
+
+git switch -c xx
+
+2. 查看当前分支 以及 所处分支
+
+git branch
+
+3. 切换到dev的分支
+
+git switch xxx
+
+4.将dev分支合并至当前分支
+
+git merge xxx 
+
+5.删除分支
+
+git switch -d xxxxx
+
+6.强制删除分支
+
+git switch -D xxx
+
+7.在本地创建与远程分支对应的分支
+
+git switch -c xxx origin/xxx
+
+高端操作
+
+1.存储暂存区工作现场
+
+git stash
+
+2.恢复工作现场并删除现场
+
+git stash pop
+
+3.恢复工作现场并不删除
+
+git stash apply 
+
+4.查看stash列表
+
+git stash list
+
+标签
+
+1.查看所有标签
+
+git tag
+
+2.给当前提交打标签并注明说明
+
+git tag -a xxx -m "msg" 
+
+3.给指定的commitid打标签并注明说明
+
+git tag -a xxx -m "msg" commit
+
+4.查看标签说明
+
+git show v0.9
+
+5.推送标签v1.0
+
+git push origin v0.9
+
+6.推送所有标签
+
+git push origin --tags
+
+7.删除远程标签
+
+git tag -d xxx
+
+git push origin xxx
